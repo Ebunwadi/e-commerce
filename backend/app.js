@@ -5,7 +5,10 @@ const cookieParser = require("cookie-parser");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 
-app.use(cors());
+app.use(cors({
+  origin: ['https://ecomm-25gv.onrender.com'],
+  credentials: true
+}));
 
 app.use(express.json());
 app.use(cookieParser());
