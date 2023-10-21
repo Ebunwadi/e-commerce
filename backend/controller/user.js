@@ -38,7 +38,8 @@ router.post("/create-user", async (req, res, next) => {
 
     const activationToken = createActivationToken(user);
 
-    const activationUrl = `https://ecom-p0vt.onrender.com/activation/${activationToken}`;
+        const activationUrl = `https://ecom-p0vt.onrender.com/activation/${activationToken}`;
+
 
     try {
       await sendMail({
