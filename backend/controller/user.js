@@ -38,7 +38,8 @@ router.post("/create-user", async (req, res, next) => {
 
     const activationToken = createActivationToken(user);
 
-    const activationUrl = `https://ecomm-25gv.onrender.com/${activationToken}`;
+    // const activationUrl = `https://ecomm-25gv.onrender.com/activation/${activationToken}`;
+    const activationUrl = `http://localhost:3000/activation/${activationToken}`;
 
     try {
       await sendMail({
@@ -96,6 +97,7 @@ router.post(
 
       sendToken(user, 201, res);
     } catch (error) {
+      console.log(error);
       return next(new ErrorHandler(error.message, 500));
     }
   })
